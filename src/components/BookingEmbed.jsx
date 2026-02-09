@@ -40,7 +40,7 @@ export default function BookingEmbed() {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="bg-apple-lightgray rounded-3xl p-10 shadow-sm"
+            className="bg-apple-lightgray rounded-3xl p-6 sm:p-10 shadow-sm"
           >
             {/* 
               ============================================================
@@ -69,12 +69,12 @@ export default function BookingEmbed() {
               ============================================================
             */}
             
-            <div className="bg-white rounded-lg overflow-hidden" style={{ minHeight: '600px' }}>
-              <iframe 
-                src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0Qo5otHlUVhYtn_DsQQj6S7LwoJYRM3dN5-29pdio0WwY7PM_PipRHfKvEJWW9qc3DPzyoSL72?gv=true" 
-                style={{ border: '0', width: '100%', height: '600px' }}
-                title="Book an Appointment">
-              </iframe>
+            <div className="bg-white rounded-lg overflow-hidden">
+              <iframe
+                src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0Qo5otHlUVhYtn_DsQQj6S7LwoJYRM3dN5-29pdio0WwY7PM_PipRHfKvEJWW9qc3DPzyoSL72?gv=true"
+                className="w-full h-[520px] sm:h-[600px] border-0"
+                title="Book an Appointment"
+              />
             </div>
           </motion.div>
         </motion.div>
