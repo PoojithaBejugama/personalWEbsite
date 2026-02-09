@@ -27,12 +27,12 @@ export default function Navbar() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/80 backdrop-blur-xl shadow-sm border-b border-gray-200' : 'bg-white/80 backdrop-blur-xl'
-      }`}
+      className="fixed top-4 left-0 right-0 z-50 px-4"
     >
-      <div className="max-w-[980px] mx-auto px-6 lg:px-8">
-        <div className="flex justify-between items-center h-11">
+      <div className={`max-w-5xl mx-auto transition-all duration-300 ${
+        isScrolled ? 'bg-white/95 backdrop-blur-xl shadow-lg' : 'bg-white/90 backdrop-blur-xl'
+      } rounded-full ring-1 ring-black/5`}>
+        <div className="flex justify-between items-center h-14 px-6">
           {/* Logo */}
           <motion.a
             href="#home"
@@ -40,11 +40,11 @@ export default function Navbar() {
               e.preventDefault();
               scrollToSection('#home');
             }}
-            className="text-[21px] font-semibold text-apple-darkgray tracking-tight"
+            className="font-heading text-[21px] font-bold text-accent tracking-tight uppercase"
             whileHover={{ opacity: 0.7 }}
             whileTap={{ scale: 0.95 }}
           >
-            TutorPro
+            Poojitha Bejugama
           </motion.a>
 
           {/* Desktop Navigation */}
@@ -57,7 +57,7 @@ export default function Navbar() {
                   e.preventDefault();
                   scrollToSection(link.href);
                 }}
-                className="text-xs text-gray-700 hover:text-apple-darkgray transition-colors font-normal"
+                className="font-body text-xs text-gray-700 hover:text-accent transition-colors font-medium"
                 whileHover={{ opacity: 0.7 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -79,33 +79,33 @@ export default function Navbar() {
             )}
           </button>
         </div>
-      </div>
 
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: 'auto' }}
-          exit={{ opacity: 0, height: 0 }}
-          className="md:hidden bg-white/95 backdrop-blur-xl border-t border-gray-200"
-        >
-          <div className="px-6 py-4 space-y-2">
-            {content.nav.links.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection(link.href);
-                }}
-                className="block text-gray-700 hover:text-apple-darkgray transition-colors font-normal py-2 text-sm"
-              >
-                {link.name}
-              </a>
-            ))}
-          </div>
-        </motion.div>
-      )}
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden border-t border-gray-200 mt-2"
+          >
+            <div className="px-6 py-4 space-y-2">
+              {content.nav.links.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(link.href);
+                  }}
+                  className="block text-gray-700 hover:text-accent transition-colors font-normal py-2 text-sm"
+                >
+                  {link.name}
+                </a>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </div>
     </motion.nav>
   );
 }

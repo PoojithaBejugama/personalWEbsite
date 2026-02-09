@@ -3,6 +3,7 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Calculator, TrendingUp, BookOpen, Brain } from 'lucide-react';
 import { content } from '../config/content';
+import SectionShell from './SectionShell';
 
 const iconMap = {
   'calculator': Calculator,
@@ -36,8 +37,8 @@ export default function Subjects() {
   };
 
   return (
-    <section id="subjects" className="py-24 md:py-32 bg-white">
-      <div className="max-w-[980px] mx-auto px-6 lg:px-8">
+    <section id="subjects">
+      <SectionShell>
         <motion.div
           ref={ref}
           initial="hidden"
@@ -45,7 +46,7 @@ export default function Subjects() {
           variants={containerVariants}
         >
           <motion.div variants={itemVariants} className="text-center mb-20">
-            <h2 className="text-5xl sm:text-6xl font-semibold text-apple-darkgray mb-6 tracking-tight leading-tight">
+            <h2 className="font-heading text-4xl sm:text-5xl font-bold text-accent mb-6 tracking-tight leading-tight uppercase">
               {content.subjects.title}
             </h2>
             <p className="text-xl sm:text-2xl text-gray-600">
@@ -67,10 +68,10 @@ export default function Subjects() {
                   whileHover={{ y: -6 }}
                   className="bg-apple-lightgray p-8 rounded-3xl hover:bg-apple-gray transition-all cursor-pointer"
                 >
-                  <div className="bg-gradient-to-br from-primary-500 to-primary-600 w-12 h-12 rounded-2xl flex items-center justify-center mb-6">
+                  <div className="bg-accent w-12 h-12 rounded-2xl flex items-center justify-center mb-6">
                     <Icon className="h-6 w-6 text-white" />
                   </div>
-                  <h3 className="text-2xl font-semibold text-apple-darkgray mb-3">
+                  <h3 className="text-2xl font-semibold text-accent mb-3">
                     {subject.name}
                   </h3>
                   <p className="text-gray-600 leading-relaxed text-base">
@@ -81,7 +82,7 @@ export default function Subjects() {
             })}
           </motion.div>
         </motion.div>
-      </div>
+      </SectionShell>
     </section>
   );
 }

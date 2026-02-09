@@ -3,6 +3,7 @@ import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { Mail, Send, CheckCircle } from 'lucide-react';
 import { content } from '../config/content';
+import SectionShell from './SectionShell';
 
 export default function Contact() {
   const ref = useRef(null);
@@ -69,8 +70,8 @@ export default function Contact() {
   const mailtoLink = `mailto:${content.contact.email}?subject=Tutoring Inquiry&body=Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
 
   return (
-    <section id="contact" className="py-24 md:py-32 bg-apple-lightgray">
-      <div className="max-w-[640px] mx-auto px-6 lg:px-8">
+    <section id="contact">
+      <SectionShell>
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
@@ -78,7 +79,7 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
         >
           <div className="text-center mb-16">
-            <h2 className="text-5xl sm:text-6xl font-semibold text-apple-darkgray mb-6 tracking-tight leading-tight">
+            <h2 className="font-heading text-4xl sm:text-5xl font-bold text-accent mb-6 tracking-tight leading-tight uppercase">
               {content.contact.title}
             </h2>
             <p className="text-xl sm:text-2xl text-gray-600">
@@ -171,9 +172,9 @@ export default function Contact() {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <motion.button
                     type="submit"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="flex-1 bg-primary-600 text-white px-6 py-3 rounded-full font-normal hover:bg-primary-700 transition-colors flex items-center justify-center gap-2"
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="flex-1 bg-accent text-white px-6 py-3 rounded-lg font-medium hover:bg-accent-dark transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2"
                   >
                     <Send className="h-5 w-5" />
                     Send Message
@@ -181,9 +182,9 @@ export default function Contact() {
 
                   <motion.a
                     href={mailtoLink}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="flex-1 border border-gray-300 text-gray-700 px-6 py-3 rounded-full font-normal hover:bg-apple-gray transition-colors flex items-center justify-center gap-2"
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="flex-1 border-2 border-accent text-accent px-6 py-3 rounded-lg font-medium hover:bg-accent hover:text-white transition-all flex items-center justify-center gap-2"
                   >
                     <Mail className="h-5 w-5" />
                     Email Directly
@@ -193,7 +194,7 @@ export default function Contact() {
             )}
           </motion.div>
         </motion.div>
-      </div>
+      </SectionShell>
     </section>
   );
 }

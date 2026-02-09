@@ -7,17 +7,27 @@ import Testimonials from './components/Testimonials';
 import BookingEmbed from './components/BookingEmbed';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import backgroundImg from './assets/background.png';
 
 function App() {
   return (
-    <div className="min-h-screen bg-white">
+    <div 
+      className="min-h-screen"
+      style={{
+        backgroundImage: `url(${backgroundImg})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
+        backgroundRepeat: 'repeat'
+      }}
+    >
       <Navbar />
-      <main>
+      <main className="py-8">
         <Hero />
         <About />
         <Subjects />
-        <Pricing />
-        <Testimonials />
+        {/* <Pricing />
+        <Testimonials /> */}
         <BookingEmbed />
         <Contact />
       </main>

@@ -23,9 +23,11 @@ export default {
           gray: '#f5f5f7',
           darkgray: '#1d1d1f',
           lightgray: '#fbfbfd',
-        }
+        },
+        accent: '#e04e4f',
       },
       fontFamily: {
+        heading: ['Norwester', 'sans-serif'],
         sans: ['-apple-system', 'BlinkMacSystemFont', 'SF Pro Display', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
       },
       fontSize: {
