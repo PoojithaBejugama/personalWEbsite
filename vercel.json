@@ -1,4 +1,6 @@
-# Vercel Configuration
-# Automatically detected by Vercel, no action needed
-# Build command: npm run build
-# Output directory: dist
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "nodeVersion": "20.x"
+}
