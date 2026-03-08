@@ -177,6 +177,18 @@ export const content = {
     email: "tutor@example.com"
   },
 
+  // Instagram Section
+  instagram: {
+    title: "From Instagram",
+    subtitle: "Tips, study strategies, and tutoring highlights.",
+    username: "poojitha_private_tutoring",
+    posts: [
+      // Paste your Instagram post URLs here (must be post/reel links)
+      // "https://www.instagram.com/p/XXXXXXXXXXX/",
+      // "https://www.instagram.com/reel/XXXXXXXXXXX/"
+    ]
+  },
+
   // Navigation
   nav: {
     links: [
@@ -186,7 +198,8 @@ export const content = {
     //   { name: "Pricing", href: "#pricing" },
     //   { name: "Testimonials", href: "#testimonials" },
       { name: "Booking", href: "#booking" },
-      { name: "Contact", href: "#contact" }
+      { name: "Contact", href: "#contact" },
+      { name: "Instagram", href: "#instagram" }
     ]
   }
 };

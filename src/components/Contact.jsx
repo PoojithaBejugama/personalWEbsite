@@ -79,10 +79,10 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
         >
           <div className="text-center mb-16">
-            <h2 className="font-heading text-4xl sm:text-5xl font-bold text-accent mb-6 tracking-tight leading-tight uppercase">
+            <h2 className="font-heading text-4xl sm:text-5xl font-extrabold text-brand-primary mb-6 tracking-tight leading-tight">
               {content.contact.title}
             </h2>
-            <p className="text-xl sm:text-2xl text-gray-600">
+            <p className="font-body text-lg sm:text-xl text-brand-muted font-semibold">
               {content.contact.subtitle}
             </p>
           </div>
@@ -91,7 +91,7 @@ export default function Contact() {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-white rounded-3xl shadow-sm p-10"
+            className="bg-brand-surface rounded-xl shadow-sm p-10 ring-1 ring-brand-line"
           >
             {submitted ? (
               <motion.div
@@ -99,18 +99,18 @@ export default function Contact() {
                 animate={{ opacity: 1, scale: 1 }}
                 className="text-center py-8"
               >
-                <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                <CheckCircle className="h-16 w-16 text-brand-primary mx-auto mb-4" />
+                <h3 className="font-heading text-2xl font-bold text-brand-text mb-2">
                   Message Received!
                 </h3>
-                <p className="text-gray-600">
+                <p className="font-body text-brand-muted font-semibold">
                   Thank you for reaching out. I'll get back to you within 24 hours.
                 </p>
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="name" className="font-body block text-sm font-semibold text-brand-text mb-2">
                     Your Name *
                   </label>
                   <input
@@ -120,8 +120,8 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     className={`w-full px-4 py-3 rounded-lg border ${
-                      errors.name ? 'border-red-500' : 'border-gray-300'
-                    } focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all`}
+                      errors.name ? 'border-red-500' : 'border-brand-line'
+                    } focus:ring-2 focus:ring-brand-accent focus:border-transparent outline-none transition-all font-body text-brand-text`}
                     placeholder="John Doe"
                   />
                   {errors.name && (
@@ -130,7 +130,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="email" className="font-body block text-sm font-semibold text-brand-text mb-2">
                     Your Email *
                   </label>
                   <input
@@ -140,8 +140,8 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     className={`w-full px-4 py-3 rounded-lg border ${
-                      errors.email ? 'border-red-500' : 'border-gray-300'
-                    } focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all`}
+                      errors.email ? 'border-red-500' : 'border-brand-line'
+                    } focus:ring-2 focus:ring-brand-accent focus:border-transparent outline-none transition-all font-body text-brand-text`}
                     placeholder="john@example.com"
                   />
                   {errors.email && (
@@ -150,7 +150,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="message" className="font-body block text-sm font-semibold text-brand-text mb-2">
                     Your Message *
                   </label>
                   <textarea
@@ -160,8 +160,8 @@ export default function Contact() {
                     onChange={handleChange}
                     rows="5"
                     className={`w-full px-4 py-3 rounded-lg border ${
-                      errors.message ? 'border-red-500' : 'border-gray-300'
-                    } focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all resize-none`}
+                      errors.message ? 'border-red-500' : 'border-brand-line'
+                    } focus:ring-2 focus:ring-brand-accent focus:border-transparent outline-none transition-all resize-none font-body text-brand-text`}
                     placeholder="Tell me about your tutoring needs..."
                   ></textarea>
                   {errors.message && (
@@ -174,7 +174,7 @@ export default function Contact() {
                     type="submit"
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
-                    className="flex-1 bg-accent text-white px-6 py-3 rounded-lg font-medium hover:bg-accent-dark transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2"
+                    className="font-body flex-1 bg-brand-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2"
                   >
                     <Send className="h-5 w-5" />
                     Send Message
@@ -184,7 +184,7 @@ export default function Contact() {
                     href={mailtoLink}
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
-                    className="flex-1 border-2 border-accent text-accent px-6 py-3 rounded-lg font-medium hover:bg-accent hover:text-white transition-all flex items-center justify-center gap-2"
+                    className="font-body flex-1 bg-brand-primary border-2 border-brand-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-all flex items-center justify-center gap-2"
                   >
                     <Mail className="h-5 w-5" />
                     Email Directly

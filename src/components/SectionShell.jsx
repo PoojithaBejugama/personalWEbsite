@@ -15,7 +15,7 @@ export default function SectionShell({ children, className = '' }) {
         transition={{ duration: 0.6, ease: 'easeOut' }}
         className="mx-auto max-w-5xl px-6"
       >
-        <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg ring-1 ring-black/5 p-8 md:p-12">
+        <div className="bg-brand-surface rounded-xl shadow-[0_10px_30px_rgba(158,0,89,0.08)] ring-1 ring-brand-line p-8 md:p-12">
           {children}
         </div>
       </motion.div>

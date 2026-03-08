@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { content } from '../config/content';
+import logo from '../assets/logo-light-nobackground.png';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,8 +31,8 @@ export default function Navbar() {
       className="fixed top-4 left-0 right-0 z-50 px-4"
     >
       <div className={`max-w-5xl mx-auto transition-all duration-300 ${
-        isScrolled ? 'bg-white/95 backdrop-blur-xl shadow-lg' : 'bg-white/90 backdrop-blur-xl'
-      } rounded-full ring-1 ring-black/5`}>
+        isScrolled ? 'bg-brand-surface shadow-lg' : 'bg-brand-surface shadow-md'
+      } rounded-xl ring-1 ring-brand-line`}>
         <div className="flex justify-between items-center h-14 px-6">
           {/* Logo */}
           <motion.a
@@ -40,11 +41,18 @@ export default function Navbar() {
               e.preventDefault();
               scrollToSection('#home');
             }}
-            className="font-heading text-[21px] font-bold text-accent tracking-tight uppercase"
+            className="flex items-center gap-3"
             whileHover={{ opacity: 0.7 }}
             whileTap={{ scale: 0.95 }}
           >
-            Poojitha Bejugama
+            <img
+              src={logo}
+              alt="Poojitha Tutoring logo"
+              className="h-10 sm:h-11 w-auto object-contain"
+            />
+            <span className="font-heading text-base sm:text-lg font-bold text-brand-primary tracking-tight">
+              Poojitha Private Tutoring
+            </span>
           </motion.a>
 
           {/* Desktop Navigation */}
@@ -57,7 +65,7 @@ export default function Navbar() {
                   e.preventDefault();
                   scrollToSection(link.href);
                 }}
-                className="font-body text-xs text-gray-700 hover:text-accent transition-colors font-medium"
+                className="font-body text-xs text-brand-text hover:text-brand-primary transition-colors font-semibold"
                 whileHover={{ opacity: 0.7 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -73,9 +81,9 @@ export default function Navbar() {
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? (
-              <X className="h-5 w-5 text-apple-darkgray" />
+              <X className="h-5 w-5 text-brand-text" />
             ) : (
-              <Menu className="h-5 w-5 text-apple-darkgray" />
+              <Menu className="h-5 w-5 text-brand-text" />
             )}
           </button>
         </div>
@@ -86,7 +94,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden border-t border-gray-200 mt-2"
+            className="md:hidden border-t border-brand-line mt-2"
           >
             <div className="px-6 py-4 space-y-2">
               {content.nav.links.map((link) => (
@@ -97,7 +105,7 @@ export default function Navbar() {
                     e.preventDefault();
                     scrollToSection(link.href);
                   }}
-                  className="block text-gray-700 hover:text-accent transition-colors font-normal py-2 text-sm"
+                  className="font-body block text-brand-text hover:text-brand-primary transition-colors font-semibold py-2 text-sm"
                 >
                   {link.name}
                 </a>

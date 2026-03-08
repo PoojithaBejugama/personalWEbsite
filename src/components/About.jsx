@@ -44,14 +44,14 @@ export default function About() {
           variants={containerVariants}
         >
           <motion.div variants={itemVariants} className="text-center mb-20">
-            <h2 className="font-heading text-4xl sm:text-5xl font-bold text-accent mb-6 tracking-tight leading-tight uppercase">
+            <h2 className="font-heading text-4xl sm:text-5xl font-extrabold text-brand-primary mb-6 tracking-tight leading-tight">
               {content.about.title}
             </h2>
-            <p className="text-xl sm:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-normal">
+            <p className="font-body text-lg sm:text-xl text-brand-muted max-w-3xl mx-auto leading-relaxed font-semibold">
               {content.about.description}
             </p>
            
-            <p className="text-md sm:text-2xl text-gray-500 max-w-3xl mx-auto leading-relaxed font-normal m-3">
+            <p className="font-body text-sm sm:text-lg text-brand-muted max-w-3xl mx-auto leading-relaxed font-semibold m-3">
               Languages I speak: Telugu, Hindi and English
             </p>
           </motion.div>
@@ -69,15 +69,15 @@ export default function About() {
                   key={value.title}
                   variants={itemVariants}
                   whileHover={{ y: -6 }}
-                  className="bg-white p-10 rounded-3xl shadow-sm hover:shadow-lg transition-all"
+                  className="bg-brand-surface p-10 rounded-xl shadow-sm ring-1 ring-brand-line hover:shadow-lg transition-all"
                 >
-                  <div className="bg-accent w-12 h-12 rounded-2xl flex items-center justify-center mb-6">
+                  <div className="bg-brand-accent w-12 h-12 rounded-lg flex items-center justify-center mb-6">
                     <Icon className="h-6 w-6 text-white" />
                   </div>
-                  <h3 className="text-2xl font-semibold text-accent mb-4">
+                  <h3 className="font-heading text-2xl font-bold text-brand-primary mb-4">
                     {value.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed text-base">
+                  <p className="font-body text-brand-muted leading-relaxed text-base font-semibold">
                     {value.description}
                   </p>
                 </motion.div>

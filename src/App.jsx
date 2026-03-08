@@ -6,19 +6,21 @@ import Pricing from './components/Pricing';
 import Testimonials from './components/Testimonials';
 import BookingEmbed from './components/BookingEmbed';
 import Contact from './components/Contact';
+import InstagramFeed from './components/InstagramFeed';
 import Footer from './components/Footer';
 import backgroundImg from './assets/background.png';
 
 function App() {
   return (
     <div 
-      className="min-h-screen"
+      className="min-h-screen text-brand-text"
       style={{
         backgroundImage: `url(${backgroundImg})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed',
-        backgroundRepeat: 'repeat'
+        backgroundSize: 'contain',
+        backgroundPosition: 'top center',
+        backgroundAttachment: 'scroll',
+        backgroundRepeat: 'repeat',
+        backgroundColor: '#fff7fb'
       }}
     >
       <Navbar />
@@ -30,6 +32,7 @@ function App() {
         <Testimonials /> */}
         <BookingEmbed />
         <Contact />
+        <InstagramFeed />
       </main>
       <Footer />
     </div>

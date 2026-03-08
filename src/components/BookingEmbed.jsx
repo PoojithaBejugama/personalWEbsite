@@ -24,13 +24,13 @@ export default function BookingEmbed() {
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <h2 className="font-heading text-4xl sm:text-5xl font-bold text-accent mb-6 tracking-tight leading-tight uppercase">
+              <h2 className="font-heading text-4xl sm:text-5xl font-extrabold text-brand-primary mb-6 tracking-tight leading-tight">
                 {content.booking.title}
               </h2>
-              <p className="text-xl sm:text-2xl text-gray-600 mb-3">
+              <p className="font-body text-lg sm:text-xl text-brand-muted mb-3 font-semibold">
                 {content.booking.subtitle}
               </p>
-              <p className="text-gray-500 text-base">
+              <p className="font-body text-brand-muted text-base font-semibold">
                 {content.booking.description}
               </p>
             </motion.div>
@@ -40,7 +40,7 @@ export default function BookingEmbed() {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="bg-apple-lightgray rounded-3xl p-6 sm:p-10 shadow-sm"
+            className="bg-brand-secondary rounded-xl p-6 sm:p-10 shadow-sm ring-1 ring-brand-line"
           >
             {/* 
               ============================================================
@@ -69,7 +69,7 @@ export default function BookingEmbed() {
               ============================================================
             */}
             
-            <div className="bg-white rounded-lg overflow-hidden">
+            <div className="bg-brand-surface rounded-md overflow-hidden ring-1 ring-brand-line">
               <iframe
                 src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0Qo5otHlUVhYtn_DsQQj6S7LwoJYRM3dN5-29pdio0WwY7PM_PipRHfKvEJWW9qc3DPzyoSL72?gv=true"
                 className="w-full h-[520px] sm:h-[600px] border-0"
