@@ -14,11 +14,7 @@
 
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-    background-image: url('./assets/background.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    background: #fff9fc;
     color: #e04e4f;
     min-height: 100vh;
   }
@@ -32,5 +28,118 @@
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@layer components {
+  .site-bg {
+    position: relative;
+    isolation: isolate;
+    overflow-x: clip;
+    background-color: #fffafc;
+    background-image:
+      linear-gradient(to right, rgba(187, 118, 159, 0.13) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(187, 118, 159, 0.13) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: center;
+  }
+
+  .site-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.35;
+    background-image:
+      linear-gradient(to right, rgba(174, 99, 144, 0.1) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(174, 99, 144, 0.1) 1px, transparent 1px);
+    background-size: 52px 49px;
+    transform: skewY(0.45deg);
+    transform-origin: top;
+  }
+
+  .bg-decor-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .decor-item {
+    position: absolute;
+    width: clamp(8rem, 13vw, 14rem);
+    opacity: 0.96;
+    filter: drop-shadow(0 8px 14px rgba(138, 0, 86, 0.14));
+    user-select: none;
+  }
+
+  .decor-top-left { top: -0.5rem; left: -1.25rem; transform: rotate(-8deg); }
+  .decor-right-upper { top: 12rem; right: -1.25rem; width: clamp(8.25rem, 12vw, 12.5rem); transform: rotate(10deg); }
+  .decor-left-mid { top: 32rem; left: 5%; width: clamp(6.5rem, 9.5vw, 9.25rem); transform: rotate(-12deg); }
+  .decor-right-mid { top: 55rem; right: -1.75rem; width: clamp(8.75rem, 11vw, 11rem); transform: rotate(-14deg); }
+  .decor-bottom-left { bottom: 18rem; left: -1.5rem; width: clamp(9rem, 13vw, 13rem); transform: rotate(7deg); }
+  .decor-bottom-right { bottom: 14rem; right: 4%; width: clamp(6.25rem, 9vw, 8.75rem); transform: rotate(-9deg); }
+  .decor-bottom-center { bottom: -0.5rem; right: 28%; width: clamp(9rem, 14vw, 14rem); transform: rotate(-8deg); }
+
+  @media (max-width: 1024px) {
+    .decor-item {
+      opacity: 0.88;
+      filter: drop-shadow(0 6px 10px rgba(138, 0, 86, 0.1));
+    }
+
+    .decor-hide-tablet {
+      display: none;
+    }
+
+    .decor-right-upper {
+      top: 9rem;
+      right: -2rem;
+    }
+
+    .decor-right-mid {
+      right: -2.5rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .site-bg {
+      background-size: 42px 42px;
+    }
+
+    .site-bg::before {
+      background-size: 44px 43px;
+      opacity: 0.28;
+    }
+
+    .decor-item {
+      width: clamp(6rem, 25vw, 8.5rem);
+      opacity: 0.75;
+    }
+
+    .decor-hide-mobile {
+      display: none;
+    }
+
+    .decor-top-left {
+      top: 2.5rem;
+      left: -2rem;
+    }
+
+    .decor-right-upper {
+      top: 18rem;
+      right: -2.5rem;
+    }
+
+    .decor-bottom-right {
+      bottom: 8rem;
+      right: -1.75rem;
+    }
+
+    .decor-bottom-center {
+      right: 8%;
+      bottom: -1rem;
+    }
   }
 }
